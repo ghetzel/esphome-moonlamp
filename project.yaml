@@ -1,0 +1,35 @@
+esphome:
+  name: luna # this will present via mDNS on the local network as "luna.local"
+  platform: ESP8266
+  board: d1_mini
+
+  platformio_options:
+    lib_ignore: FreeRTOS
+
+wifi:
+  reboot_timeout: "3min"
+  power_save_mode: "none"
+  ap:
+    ssid: "Moon's Haunted"
+    password: "forallmankind"
+
+web_server:
+  port: 80 # go to http://luna.local for web interface
+
+captive_portal:
+
+logger:
+
+api:
+  password: "forallmankind"
+
+ota:
+  password: "forallmankind"
+
+light:
+  # Integrates the NeoPixel Jewel (x7) https://www.adafruit.com/product/2226
+  - name: "Moon's Haunted"
+    platform: neopixelbus
+    type: GRBW # this is specific to the NeoPixel Jewel
+    pin: GPIO3 # labelled "RX" on board, see https://mrandmrheatherflanagan.com/centerpieces/pinout-d1-mini.png
+    num_leds: 7 # THERE. ARE. SEVEN. LIGHTS.
