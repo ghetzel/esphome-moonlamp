@@ -7,14 +7,39 @@ esphome:
     lib_ignore: FreeRTOS
 
 wifi:
+  # Uncomment to flash the SSID details right onto the chip.
+  #   NOTE: makes actually changing your Wireless network details annoying.
+  #
+  # ssid: "Pretty Fly (for a Wi-Fi)"
+  # password: "thisisnotrealdonteventry"
+
+  # Override the mDNS address the device announces.
+  # use_address: "luna.local"
+
+  # Uncomment to statically set IP details
+  # manual_ip:
+  #   static_ip: 192.168.1.69
+  #   gateway: 192.168.1.1
+  #   subnet: 255.255.255.0
+  #   dns1: 192.168.1.1
+
+  # Reset every 3 minutes if the above network cannot be connected to
   reboot_timeout: "3min"
+
+  # So I just started blastin....
   power_save_mode: "none"
+
+  # Fallback/captive portal AP for when the above ssid/password stays commented.
   ap:
     ssid: "Moon's Haunted"
     password: "forallmankind"
 
+# See: https://esphome.io/components/web_server.html
 web_server:
   port: 80 # go to http://luna.local for web interface
+  # auth:
+  #   username: "luna"
+  #   password: "forallmankind"
 
 captive_portal:
 
