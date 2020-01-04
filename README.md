@@ -37,6 +37,14 @@ This should:
 1. Plug the Moon Lamp into your machine using the USB Micro cable it came with.
 2. Run `make upload-phy`
 
+### OTA (over-the-air) Flashing
+
+This framework supports an OTA flashing mode that allows you to do firmware updates over Wifi (if connecte).  If the device is on your wireless, you can use this mode with:
+
+```
+make upload
+```
+
 ## Configuring WiFi
 
 If all went well, the lamp should now be broadcasting a Wifi network.  You must connect to this network, after which its captive portal (e.g.: "You need to sign-in to this network") page will actually be a web form where you fill in your actual Wireless network details.  Do this now.
