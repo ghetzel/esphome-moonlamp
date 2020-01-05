@@ -1,4 +1,5 @@
 CONFIG = project.yaml
+PORT   ?= /dev/ttyUSB0
 
 default: upload
 
@@ -20,7 +21,7 @@ upload: compile
 	./env/bin/esphome $(CONFIG) upload
 
 upload-phy: compile
-	./env/bin/esphome $(CONFIG) upload --upload-port=/dev/ttyUSB0
+	./env/bin/esphome $(CONFIG) upload --upload-port=$(PORT)
 
 run:
 	./env/bin/esphome $(CONFIG) run
